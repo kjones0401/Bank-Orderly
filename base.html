@@ -1,0 +1,16 @@
+{% macro security() -%}<input type="hidden" name="csrf" value="{{ session.csrf }}"><input type="hidden" name="nonce" value="{{ new_form() }}">{%- endmacro %}
+{% macro table(rows) -%}
+{% if rows %}<div class="table-scroll"><table><thead><tr>{% for key in rows[0] %}<th>{{ key|replace('_',' ')|title }}</th>{% endfor %}</tr></thead><tbody>{% for row in rows %}<tr>{% for key,value in row.items() %}<td>{% if key.endswith('_cents') %}{{ money(value) }}{% else %}{{ value if value is not none else '—' }}{% endif %}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>{% else %}<p class="empty">No matching records.</p>{% endif %}
+{%- endmacro %}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{{ title }} · Bank Orderly</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head>
+<body><div class="layout {% if not staff %}signed-out{% endif %}">
+{% if staff %}<aside><a class="brand" href="{{ url_for('dashboard') }}">BANK<br><strong>ORDERLY</strong><small>DESKTOP + WEB · v3.1</small></a>
+<nav aria-label="Banking navigation">
+<a href="{{ url_for('dashboard') }}">Overview</a><a href="{{ url_for('search') }}">Search accounts</a><a href="{{ url_for('create_account') }}">Create account</a>
+<a href="{{ url_for('transaction',kind='deposit') }}">Deposit</a><a href="{{ url_for('transaction',kind='withdrawal') }}">Withdrawal</a><a href="{{ url_for('transfer') }}">Transfer</a><a href="{{ url_for('reports') }}">Reports</a>
+{% if staff.role=='Admin' %}<span class="nav-label">ADMINISTRATION</span><a href="{{ url_for('staff_accounts') }}">Staff accounts</a><a href="{{ url_for('reviews') }}">Restricted reviews</a><a href="{{ url_for('verify') }}">Verify customer</a>{% endif %}
+</nav><div class="sidebar-footer"><p>{{ staff.username }}<br><small>{{ staff.role }} · Staff {{ staff.id }}</small></p><form method="post" action="{{ url_for('logout') }}">{{ security() }}<button class="signout" type="submit">Sign out</button></form></div></aside>{% endif %}
+<main><header><div><p class="eyebrow">SIMPLE BANK ORDERLY</p><h1>{{ title }}</h1></div>{% if staff %}<span class="environment">{{ backend }} · LOCAL CLASSROOM APP</span>{% endif %}</header>
+{% for category,message in get_flashed_messages(with_categories=true) %}<div role="status" class="notice {{ category }}">{{ message }}</div>{% endfor %}
+{% if export_pending %}<div class="notice warning">The database saved its records, but external log export is pending. Check history before repeating any transaction.<form method="post" action="{{ url_for('retry_logs') }}">{{ security() }}<button type="submit">Retry log export</button></form></div>{% endif %}
+{% block content %}{% endblock %}<footer>Classroom simulation · Use fictional customer information · No real banking or government filings</footer></main></div></body></html>

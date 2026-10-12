@@ -1,0 +1,53 @@
+test_admin_permissions (test_bank.BankingTests.test_admin_permissions) ... ok
+test_backup_restore (test_bank.BankingTests.test_backup_restore) ... ok
+test_cash_conductor_cross_owners (test_bank.BankingTests.test_cash_conductor_cross_owners) ... ok
+test_cash_not_net (test_bank.BankingTests.test_cash_not_net) ... ok
+test_closed_account_preserved_and_blocked (test_bank.BankingTests.test_closed_account_preserved_and_blocked) ... ok
+test_closure_reason_required (test_bank.BankingTests.test_closure_reason_required) ... ok
+test_closure_zero_policy (test_bank.BankingTests.test_closure_zero_policy) ... ok
+test_combined_search (test_bank.BankingTests.test_combined_search) ... ok
+test_concurrent_deposits (test_bank.BankingTests.test_concurrent_deposits) ... ok
+test_concurrent_number_allocation (test_bank.BankingTests.test_concurrent_number_allocation) ... ok
+test_csv_formula_safe (test_bank.BankingTests.test_csv_formula_safe) ... ok
+test_ctr_exact_boundary (test_bank.BankingTests.test_ctr_exact_boundary) ... ok
+test_ctr_multiple_accounts_and_tellers (test_bank.BankingTests.test_ctr_multiple_accounts_and_tellers) ... ok
+test_ctr_over_boundary (test_bank.BankingTests.test_ctr_over_boundary) ... ok
+test_database_outage (test_bank.BankingTests.test_database_outage) ... ok
+test_deposit_withdraw (test_bank.BankingTests.test_deposit_withdraw) ... ok
+test_edit_audit (test_bank.BankingTests.test_edit_audit) ... ok
+test_electronic_not_cash (test_bank.BankingTests.test_electronic_not_cash) ... ok
+test_export_failure_retry (test_bank.BankingTests.test_export_failure_retry) ... ok
+test_failed_login_persisted (test_bank.BankingTests.test_failed_login_persisted) ... ok
+test_identity_required (test_bank.BankingTests.test_identity_required) ... ok
+test_invalid_conductor_rolls_back (test_bank.BankingTests.test_invalid_conductor_rolls_back) ... ok
+test_invalid_money (test_bank.BankingTests.test_invalid_money) ... ok
+test_legacy_import (test_bank.BankingTests.test_legacy_import) ... ok
+test_literal_sql_injection_search (test_bank.BankingTests.test_literal_sql_injection_search) ... ok
+test_literal_wildcard (test_bank.BankingTests.test_literal_wildcard) ... ok
+test_lockout (test_bank.BankingTests.test_lockout) ... ok
+test_login (test_bank.BankingTests.test_login) ... ok
+test_logs_snapshot (test_bank.BankingTests.test_logs_snapshot) ... ok
+test_overdraft_requires_confirmation (test_bank.BankingTests.test_overdraft_requires_confirmation) ... ok
+test_password_not_plaintext (test_bank.BankingTests.test_password_not_plaintext) ... ok
+test_reopens_cash_review_after_more_cash (test_bank.BankingTests.test_reopens_cash_review_after_more_cash) ... ok
+test_report_date_validation (test_bank.BankingTests.test_report_date_validation) ... ok
+test_report_filters (test_bank.BankingTests.test_report_filters) ... ok
+test_restart_persistence (test_bank.BankingTests.test_restart_persistence) ... ok
+test_review (test_bank.BankingTests.test_review) ... ok
+test_search_all_matches (test_bank.BankingTests.test_search_all_matches) ... ok
+test_search_each_field (test_bank.BankingTests.test_search_each_field) ... ok
+test_sequential_numbers (test_bank.BankingTests.test_sequential_numbers) ... ok
+test_service_validation (test_bank.BankingTests.test_service_validation) ... ok
+test_teller_report_scoped (test_bank.BankingTests.test_teller_report_scoped) ... ok
+test_transfer (test_bank.BankingTests.test_transfer) ... ok
+test_transfer_closed (test_bank.BankingTests.test_transfer_closed) ... ok
+test_transfer_record_review (test_bank.BankingTests.test_transfer_record_review) ... ok
+test_transfer_rollback (test_bank.BankingTests.test_transfer_rollback) ... ok
+test_transfer_same_account (test_bank.BankingTests.test_transfer_same_account) ... ok
+test_unauthorized_mutation (test_bank.BankingTests.test_unauthorized_mutation) ... ok
+test_valid_money (test_bank.BankingTests.test_valid_money) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 4.726s
+
+OK
